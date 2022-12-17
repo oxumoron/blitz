@@ -1,0 +1,11 @@
+@media (max-width: 1400px) {
+  .header__title {
+    font-size: 40px;
+    line-height: 55px;
+  }
+
+  .header__list-item span {
+    font-size: 60px;
+    line-height: 100px;
+  }
+}

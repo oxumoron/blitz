@@ -1,0 +1,944 @@
+@font-face {
+  font-family: "Helvetica-Neue-Black-Condensed";
+  src: url("/fonts/HelveticaNeueBlackCondensed.woff2");
+  src: local("Helvetica-Neue-Black-Condensed"),
+    local("Helvetica Neue Black Condensed"),
+    url("/fonts/HelveticaNeueBlackCondensed.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geometria-Regular";
+  src: url("/fonts/Geometria-Regular.eot");
+  src: local("Geometria Regular"), local("Geometria-Regular"),
+    url("/fonts/Geometria-Regular.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/Geometria-Regular.woff2") format("woff2"),
+    url("/fonts/Geometria-Regular.woff") format("woff"),
+    url("/fonts/Geometria-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geometria-Medium";
+  src: url("/fonts/Geometria-Medium.eot");
+  src: local("Geometria Medium"), local("Geometria-Medium"),
+    url("/fonts/Geometria-Medium.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/Geometria-Medium.woff2") format("woff2"),
+    url("/fonts/Geometria-Medium.woff") format("woff"),
+    url("/fonts/Geometria-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geometria-Light";
+  src: url("/fonts/Geometria-Light.eot");
+  src: local("Geometria Light"), local("Geometria-Light"),
+    url("/fonts/Geometria-Light.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/Geometria-Light.woff2") format("woff2"),
+    url("/fonts/Geometria-Light.woff") format("woff"),
+    url("/fonts/Geometria-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geometria-Bold";
+  src: url("/fonts/Geometria-Bold.eot");
+  src: local("Geometria Bold"), local("Geometria-Bold"),
+    url("/fonts/Geometria-Bold.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/Geometria-Bold.woff2") format("woff2"),
+    url("/fonts/Geometria-Bold.woff") format("woff"),
+    url("/fonts/Geometria-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geometria-ExtraBold";
+  src: url("/fonts/Geometria-ExtraBold.eot");
+  src: local("Geometria ExtraBold"), local("Geometria-ExtraBold"),
+    url("/fonts/Geometria-ExtraBold.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/Geometria-ExtraBold.woff2") format("woff2"),
+    url("/fonts/Geometria-ExtraBold.woff") format("woff"),
+    url("/fonts/Geometria-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geometria-Heavy";
+  src: url("/fonts/Geometria-Heavy.eot");
+  src: local("Geometria Heavy"), local("Geometria-Heavy"),
+    url("/fonts/Geometria-Heavy.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/Geometria-Heavy.woff2") format("woff2"),
+    url("/fonts/Geometria-Heavy.woff") format("woff"),
+    url("/fonts/Geometria-Heavy.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* ===================   VAR ==================== */
+:root {
+  --black: #000;
+  --white: #fff;
+  --blue: #2a94e2;
+  --grey: #eef3fa;
+  --extra-grey: #f6f6f6;
+  --footer-grey: #535860;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  font-family: "Geometria-Regular", sans-serif;
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--black);
+  background-color: var(--white);
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.btn {
+  font-family: "Geometria-Medium", serif;
+  padding: 17px 22px;
+  border-radius: 5px;
+  border: 1px solid var(--blue);
+}
+
+.btn:hover {
+  background-color: var(--white);
+  color: var(--blue);
+}
+
+.section {
+  margin: 60px 0;
+}
+
+.title {
+  font-family: "Geometria-ExtraBold", serif;
+  font-size: 35px;
+  line-height: 48px;
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.subtitle {
+  font-size: 22px;
+  line-height: 36px;
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+/* =================== HEADER START ====================== */
+.header {
+  background: url(../images/bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 877px;
+}
+
+.header__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.header__top-left {
+  display: flex;
+  gap: 20px;
+}
+
+/* ======== BURGER START =================== */
+
+.header__top-btn {
+  width: 40px;
+  height: 30px;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.header__top-btn span {
+  width: 30px;
+  height: 3px;
+  position: absolute;
+  top: 50%;
+  background-color: var(--blue);
+  transition: all 0.5s;
+}
+
+.header__top-btn span:nth-of-type(2) {
+  top: calc(50% - 10px);
+  width: 40px;
+}
+
+.header__top-btn span:nth-of-type(3) {
+  top: calc(50% + 10px);
+  width: 20px;
+}
+
+.header__top-btn.active span:nth-of-type(1) {
+  display: none;
+}
+
+.header__top-btn.active span:nth-of-type(2) {
+  background-color: var(--white);
+  top: 50%;
+  transform: rotate(45deg);
+}
+
+.header__top-btn.active span:nth-of-type(3) {
+  background-color: var(--white);
+  width: 40px;
+  top: 50%;
+  transform: rotate(-45deg);
+}
+
+.header__top-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  font-size: 24px;
+  background: var(--blue);
+  transform: translateX(-100%);
+  transition: transform 0.5s;
+}
+
+.header__top-menu li {
+  margin-bottom: 50px;
+  transition: 0.4s all;
+}
+
+.header__top-menu li:hover {
+  color: var(--white);
+  text-decoration: underline;
+}
+
+.header__top-menu.active {
+  transform: translateX(0);
+}
+/* ======== BURGER END =================== */
+.header__callback {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+
+.header__phone {
+  font-size: 30px;
+  line-height: 49px;
+}
+
+.header__btn {
+  background-color: transparent;
+  transition: all 0.4s;
+}
+
+.header__content {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.header__title {
+  font-family: "Geometria-Heavy", serif;
+  font-size: 50px;
+  line-height: 75px;
+  text-transform: uppercase;
+}
+
+.header__subtitle {
+  font-size: 22px;
+  line-height: 36px;
+  margin-bottom: 49px;
+}
+
+.header__list {
+  display: flex;
+  justify-content: flex-start;
+  gap: 50px;
+}
+
+.header__list-item {
+  display: flex;
+  align-items: center;
+}
+
+.header__list-item span {
+  font-family: "Geometria-Light", serif;
+  font-size: 80px;
+  line-height: 131px;
+  margin-right: 30px;
+  display: inline-block;
+}
+
+.header__list-item p {
+  width: 150px;
+}
+
+.header__test {
+  display: flex;
+  align-items: center;
+  max-width: 420px;
+  gap: 20px;
+  margin-bottom: 43px;
+}
+
+.header__test span {
+  font-family: "Geometria-Bold", serif;
+}
+
+.header__desc-btn {
+  display: inline-block;
+  background-color: var(--blue);
+  color: var(--white);
+  transition: all 0.4s;
+}
+
+/* =================== HEADER END ====================== */
+
+/* =================== test START ====================== */
+.test__inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.test__col ul {
+  text-align: left;
+  padding: 35px 40px;
+  border-left: 3px solid var(--extra-grey);
+}
+
+.test__col li {
+  width: 283px;
+  position: relative;
+  padding-left: 63px;
+}
+
+.test__col li:before {
+  content: "";
+  background-image: url(../images/tests-check.svg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 35px;
+  height: 35px;
+}
+
+.test__col li + li {
+  margin-top: 30px;
+}
+
+.test__col:has(h5) {
+  padding: 40px 0;
+}
+
+.test__col h5 {
+  font-family: "Geometria-ExtraBold", serif;
+  font-size: 22px;
+  line-height: 33px;
+  margin-bottom: 30px;
+}
+
+.test__row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.test__row:has(img) {
+  gap: 30px;
+  border-bottom: 3px solid var(--extra-grey);
+}
+
+.test__img img {
+  margin-bottom: 25px;
+}
+
+.test__img figcaption {
+  font-family: "Geometria-Bold", serif;
+  text-align: center;
+  margin-bottom: 25px;
+  opacity: 0.5;
+}
+
+.test__row:last-child {
+  margin-top: 25px;
+}
+
+.test__btn {
+  color: var(--blue);
+  padding-right: 40px;
+  display: inline-block;
+  position: relative;
+}
+
+.test__btn::after {
+  content: "";
+  width: 22px;
+  height: 14px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(../images/arrow-right.svg);
+  transform: translateY(3px);
+}
+/* =================== test END ====================== */
+
+/* =================== SERVICES START ====================== */
+.services__inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 300px;
+  grid-row-gap: 10px;
+  grid-column-gap: 10px;
+}
+
+.box1 {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.box4 {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.box5 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+
+.services__item {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.services__content {
+  color: var(--white);
+  text-align: center;
+  position: absolute;
+  visibility: hidden;
+  left: 1px;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.services__content h3 {
+  font-family: "Geometria-ExtraBold", serif;
+  font-size: 22px;
+  line-height: 33px;
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.services__content p {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.services__content a {
+  display: inline-block;
+  background-color: var(--blue);
+  width: 100%;
+}
+
+.services__item {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.services__content {
+  color: var(--white);
+  text-align: center;
+  position: absolute;
+  visibility: hidden;
+  left: 1px;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.services__item:hover .services__content {
+  visibility: visible;
+  transition: 1s;
+  transform: translateY(-10px);
+}
+
+.services__item:hover {
+  filter: sepia(40%);
+  transition: 0.6s;
+}
+/* =================== SERVICES END ====================== */
+
+/* =================== APARTMENTS START ====================== */
+.apartments__tabs {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  border: 2px solid var(--extra-grey);
+  margin-bottom: 30px;
+}
+
+.apartments__link {
+  width: 20%;
+  padding: 20px 10px;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
+.apartments__link:hover {
+  background-color: var(--extra-grey);
+}
+
+.apartments__link + .apartments__link {
+  border-left: 2px solid var(--extra-grey);
+}
+
+.apartments__link.active {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.apartments__link.active:hover {
+  background-color: var(--extra-grey);
+  color: var(--blue);
+}
+
+.apartments__tabs-content {
+  flex-wrap: wrap;
+  gap: 30px;
+  display: none;
+}
+
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.apartments__tabs-content.active {
+  display: flex;
+  animation-name: opacity;
+  animation-duration: 1s;
+}
+
+.apartments__card {
+  display: flex;
+  flex: 50%;
+  flex-direction: column;
+  max-width: 555px;
+  border: 1px solid var(--extra-grey);
+  transition: all 0.4s;
+}
+
+.apartments__card-top {
+  margin-bottom: 22px;
+}
+
+.apartments__card-bottom {
+  margin: 0 30px 30px;
+}
+
+.apartments__card-title {
+  font-family: "Geometria-ExtraBold", serif;
+  font-size: 22px;
+  margin-bottom: 20px;
+  transition: all 0.4s;
+}
+
+.apartments__card-subtitle {
+  margin-bottom: 20px;
+}
+
+.apartments__card-desc {
+  display: flex;
+  justify-content: space-between;
+}
+
+.apartments__card-price {
+  font-family: "Geometria-Light";
+  font-size: 33px;
+  line-height: 54px;
+  margin-bottom: 10px;
+}
+
+.apartments__card-permeter {
+  opacity: 0.7;
+}
+
+.apartments__card-square {
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.apartments__card-btn {
+  text-align: center;
+  background-color: var(--extra-grey);
+  font-size: 18px;
+  border-radius: 0;
+  transition: all 0.4s;
+  border: 1px solid var(--extra-grey);
+}
+
+.apartments__card-btn:hover {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.apartments__card:hover {
+  box-shadow: 0px 0px 18px rgba(233, 80, 79, 0.25);
+}
+
+.apartments__card:hover .apartments__card-title {
+  color: var(--blue);
+}
+
+.apartments__tabs-block {
+  margin-bottom: 40px;
+}
+
+.apartments__btn {
+  display: inline-block;
+  font-family: "Geometria-Regular", serif;
+  width: 100%;
+  text-align: center;
+  padding-right: 25px;
+  background-color: var(--extra-grey);
+  color: var(--black);
+  transition: all 0.4s;
+  border: 1px solid var(--extra-grey);
+  position: relative;
+}
+
+.apartments__btn:hover {
+  background-color: var(--blue);
+  color: var(--black);
+}
+
+.apartments__btn::after {
+  content: "";
+  width: 13px;
+  height: 8px;
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  left: calc(50% + 70px);
+  transform: translateY(-2px);
+  background-image: url(../images/arrow-bottom.svg);
+}
+/* =================== APARTMENTS END ====================== */
+
+/* =================== MORE START ====================== */
+.more {
+  padding: 65px 0;
+  background-color: var(--extra-grey);
+}
+.more__inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.more__desc {
+  padding-top: 30px;
+  width: 50%;
+}
+
+.more__desc p + p {
+  margin-top: 25px;
+}
+
+.more__title {
+  text-align: left;
+}
+
+.more__slider {
+  display: flex;
+  width: 50%;
+  flex-wrap: wrap;
+  gap: 0 10px;
+}
+
+.more__btn {
+  margin-top: 20px;
+  padding: 17px 60px;
+  display: inline-block;
+  background-color: var(--blue);
+  color: var(--white);
+  transition: all 0.4s;
+}
+
+.slick-dots {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.slick-dots li {
+  background-image: url(../images/history-img-1.jpg);
+  width: 130px;
+  height: 106px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.slick-dots li button {
+  display: none;
+}
+/* =================== MORE END ====================== */
+
+/* =================== DIRECTION START ====================== */
+.direction__top {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.direction__item {
+  width: calc(50% - 15px);
+  background-image: url(../images/direction-card.svg);
+  height: 279px;
+  background-repeat: no-repeat;
+  padding: 35px 50px 60px;
+}
+
+.direction__item-title {
+  font-family: "Geometria-ExtraBold", serif;
+  font-size: 22px;
+  line-height: 33px;
+  margin-bottom: 40px;
+}
+
+.direction__item-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.direction__item-author {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.direction__item-author span {
+  font-size: 12px;
+  line-height: 20px;
+  opacity: 0.5;
+}
+
+.direction__item-contacts {
+  display: flex;
+  flex-direction: column;
+}
+
+.direction__item-contacts a:first-child {
+  font-size: 25px;
+  line-height: 41px;
+}
+
+.direction__item-contacts a:last-child {
+  line-height: normal;
+  width: max-content;
+  border-bottom: 1px solid #000;
+}
+
+.direction__bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.direction__bottom-item a {
+  font-size: 22px;
+  line-height: 36px;
+  width: 360px;
+  color: var(--blue);
+  text-decoration: underline;
+}
+
+.direction__bottom-item a:hover {
+  text-decoration: none;
+}
+/* =================== DIRECTION END ====================== */
+
+/* =================== BOSS START ====================== */
+.boss {
+  background-color: var(--extra-grey);
+  padding: 60px 0 0;
+  margin-bottom: 0;
+}
+
+.boss__inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.boss__content .title {
+  width: 485px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.boss__content-author {
+  font-family: "Geometria-ExtraBold", serif;
+  font-size: 22px;
+  line-height: 33px;
+  margin-bottom: 30px;
+}
+
+.boss__content p + p {
+  margin-top: 30px;
+}
+
+.boss__content-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 17px 60px;
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.boss__img {
+  width: 100%;
+}
+/* =================== BOSS END ====================== */
+
+/* =================== FOOTER START ====================== */
+.footer {
+  background-color: var(--footer-grey);
+  padding: 40px 0;
+  color: var(--white);
+}
+
+.footer__inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__item {
+  font-size: 13px;
+}
+
+.footer__item p span {
+  display: block;
+}
+
+.footer__item-address {
+  font-size: 16px;
+  margin: 20px 0;
+  max-width: 325px;
+}
+
+.footer__item-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__item:has(img) {
+  align-self: center;
+}
+
+.footer__item:has(a) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  width: 273px;
+}
+
+.footer__item a:first-child {
+  font-size: 30px;
+  line-height: 49px;
+}
+
+.footer__item a:nth-child(2) {
+  font-size: 22px;
+  line-height: 36px;
+}
+
+.footer__item .btn {
+  font-family: "Geometria-Medium", serif;
+  background-color: var(--white);
+  color: var(--black);
+  transition: all 0.4s;
+}
+
+.footer__item .btn:hover {
+  background-color: var(--blue);
+  color: var(--white);
+}
+/* =================== FOOTER END ====================== */
